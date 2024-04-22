@@ -1,9 +1,42 @@
+import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 
 const CoffeeCard = ({coffee}) => {
     const {name,details,image,taste,supplier,quantity,_id} =coffee;
     const handelDelete = (_id) => {
         console.log(_id);
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+               
+           
+                fetch(`http://localhost:5175/coffee/${_id}`,{
+                    method: 'DELETE',
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                   console.log("delete confirm");
+                swal("Poof! Your imaginary file has been deleted!", {
+                    icon: "success",
+                  });
+                } else {
+                  swal("Your imaginary file is safe!");
+                }
+               }
+            )
+            }
+            
+        }
+          );
     }
     return (
         <div>
@@ -16,7 +49,9 @@ const CoffeeCard = ({coffee}) => {
       supplier : {supplier} details : {details} taste : {taste}</p>
       <div className="join flex mt-5 text-white">
   <button className="btn join-item text-white bg-indigo-700">view</button>
-  <button className="btn join-item text-white bg-violet-700">edit</button>
+ <Link to={`updateCoffee/${_id}`}>
+ <button className="btn join-item text-white bg-violet-700">edit</button>
+ </Link>
   <button onClick={() => handelDelete(_id)} className="btn join-item text-white bg-fuchsia-700">delete</button>
 </div>
   </div>
