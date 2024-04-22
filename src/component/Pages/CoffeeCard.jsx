@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import swal from "sweetalert";
 
 
-const CoffeeCard = ({coffee}) => {
+const CoffeeCard = ({coffee,setCoffees,coffees}) => {
     const {name,details,image,taste,supplier,quantity,_id} =coffee;
     const handelDelete = (_id) => {
         console.log(_id);
@@ -25,13 +25,17 @@ const CoffeeCard = ({coffee}) => {
                     console.log(data);
                     if (data.deletedCount > 0) {
                    console.log("delete confirm");
-                swal("Poof! Your imaginary file has been deleted!", {
+                swal("'WoW' You successfully deleted!", {
                     icon: "success",
                   });
                 } else {
                   swal("Your imaginary file is safe!");
                 }
+
+                const reminder = coffees.filter(cof=> cof._id !== _id)
+                setCoffees(reminder);
                }
+
             )
             }
             
