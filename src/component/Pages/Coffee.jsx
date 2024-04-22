@@ -1,3 +1,4 @@
+import swal from 'sweetalert';
 const Coffee = () => {
 
     const handleCoffee = (e) => {
@@ -22,6 +23,15 @@ const Coffee = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if (data.acknowledged) {
+              swal({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success",
+                button: "Aww yiss!",
+              })
+              
+            }
         })
 
     }
