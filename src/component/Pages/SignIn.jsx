@@ -44,7 +44,7 @@ const SignIn = () => {
     }
     return (
         <div>
-            <h1 className="text-center font-bold text-4xl p-2 mt-2">Please Sign In here</h1>
+            <h1 className="text-center font-bold text-4xl p-4 mt-">Please Sign In here</h1>
 {/*  */}
 <div className="flex justify-center items-center font-sans text-#333 h-full min-h-[90vh] p-4"
       style={{ backgroundImage: "url(https://readymadeui.com/background-image.webp)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
