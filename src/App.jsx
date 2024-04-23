@@ -13,7 +13,8 @@ function App() {
   return (
     <div>
      
-      <h1>hot coffee {coffees.length}</h1>
+      <h1 className="text-center font-bold text-5xl p-2">Hot Coffee List</h1>
+      <p className="text-center font-bold text-2xl p-2">Total items Number : {coffees.length}</p>
       <div className="grid grid-cols-1 md:grid-cols-2">
       {
         coffees.map(coffee => <CoffeeCard key={coffees._id} coffees={coffees} setCoffees={setCoffees} coffee={coffee}></CoffeeCard>)
