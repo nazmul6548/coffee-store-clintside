@@ -50,7 +50,7 @@ const Login = () => {
         </div>
         <form onSubmit={handleButton} className="bg-white rounded-2xl p-6 -mt-24 relative z-10 shadow-md">
           <div className="mb-10">
-            <h3 className="text-3xl font-extrabold text-blue-600">Sign in</h3>
+            <h3 className="text-3xl font-extrabold text-blue-600">Log In</h3>
           </div>
           <div className="mb-6">
             <label className="block text-sm font-semibold">Email</label>
@@ -70,7 +70,7 @@ const Login = () => {
             </div>
           </div>
           <div>
-            <input type="submit" value="Sign in" className="w-full py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none" />
+            <input type="submit" value="Log in" className="w-full py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none" />
            
           </div>
         </form>
